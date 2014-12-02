@@ -9,3 +9,21 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Virtualenvwrapper
+export WORKON_HOME=~/venvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+export PIP_DOWNLOAD_CACHE=~/pip-cache
+export EDITOR=nano
+
+# Customize to your needs...
+# Netsight devtools
+export PATH=$PATH:/home/benc/devtools/scripts:/home/benc/.gem/ruby/2.1.0/bin
+# PyCharm (Java) font anti-aliasing setting
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+eval `dircolors /home/benc/.dircolors`
+
+alias sshsan="ssh -XC ben@wengole.duckdns.org -p 2222 -L8112:localhost:8112 -L8081:localhost:8081"
+alias pgrep2="ps -opid,args -Aa | grep "
+
